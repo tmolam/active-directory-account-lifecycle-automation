@@ -166,6 +166,8 @@ I identified a user account whose expiration date had passed and captured its ac
 
 ![Expired Active Directory test account](screenshots/expired-user-before.png)
 
+![Expired Active Directory test account groups](screenshots/expired-user-groups.png)
+
 ### Test 2: Execute the script
 
 I ran the PowerShell script directly and verified the resulting changes to the test account.
@@ -196,7 +198,6 @@ This test demonstrated that the workflow could perform the intended account-disa
 
 ![Scheduled account lifecycle automation results](screenshots/scheduled-task-results.png)
 
-*Note: Replace the example screenshot paths above with the actual image filenames in your repository. Only include screenshots that are available and have been sanitized.*
 
 ## Key Learnings
 
