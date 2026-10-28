@@ -12,6 +12,7 @@ This project explores an identity lifecycle management gap relevant to hybrid id
 - [Technologies Used](#technologies-used)
 - [Architecture and Workflow](#architecture-and-workflow)
 - [Implementation](#implementation)
+- [How to Run](#how-to-run)
 - [Testing and Validation](#testing-and-validation)
 - [Key Learnings](#key-learnings)
 - [Security Considerations](#security-considerations)
