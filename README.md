@@ -112,6 +112,47 @@ The destination is specific to my lab environment and would need to be adapted f
 
 I configured a Windows Scheduled Task to run the PowerShell script automatically. This allows the account-expiration workflow to execute without requiring me to launch the script manually for each test.
 
+## How to Run
+
+### Requirements
+- Windows computer with the Active Directory PowerShell module installed
+- Account with sufficient permissions to modify AD users and group memberships
+- Access to the target OU
+
+### 1. Configure the target OU
+
+Open PowerShell on a domain-connected machine and navigate to the folder containing the script.
+
+Replace the example OU distinguished name with the appropriate OU in your environment.
+
+```powershell
+Import-Module ActiveDirectory
+
+$TargetOU = "OU=Disabled Users,DC=iamserver,DC=local"
+```
+
+### 2. Preview the changes
+
+Run the script with `-WhatIf` to preview the actions without making changes:
+
+```powershell
+.\Disable-ExpiredADUsers.ps1 -TargetOU $TargetOU -WhatIf
+```
+
+Review the output before proceeding.
+
+### 3. Execute the script
+
+After verifying the preview, run:
+
+```powershell
+.\Disable-ExpiredADUsers.ps1 -TargetOU $TargetOU
+```
+
+The script finds expired, enabled user accounts, removes group memberships except excluded groups, disables the accounts, and moves them to the target OU.
+
+**Caution:** Test in a lab environment first. The script makes changes to Active Directory when run without `-WhatIf`.
+
 ## Testing and Validation
 
 I tested the script in my Active Directory lab and documented the results with screenshots.
